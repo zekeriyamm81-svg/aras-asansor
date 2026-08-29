@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#f6f8fb">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <title>Talebiniz Alındı | Aras Asansör</title>
+  <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}?v=22">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='favicon-32.png') }}?v=22">
+  <link rel="apple-touch-icon" href="{{ url_for('static', filename='favicon-192.png') }}?v=22">
+  <style>
+    *{box-sizing:border-box}
+    html,body{margin:0;min-height:100%;font-family:Inter,system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
+    body{
+      color:#111827;background:#f6f8fb;
+      background-image:radial-gradient(circle at 15% 10%,rgba(7,88,175,.08),transparent 32%),
+                       radial-gradient(circle at 90% 92%,rgba(255,113,0,.08),transparent 27%);
+    }
+    a{text-decoration:none}
+    .ok-wrap{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
+    .ok-card{
+      width:min(560px,100%);background:#fff;border:1px solid #e7ecf1;border-radius:20px;
+      box-shadow:0 18px 55px rgba(20,45,70,.11);padding:26px 28px 22px;text-align:center
+    }
+    .ok-logo{display:block;width:88px;height:88px;object-fit:contain;margin:0 auto 8px}
+    .ok-check{
+      width:54px;height:54px;border-radius:50%;margin:2px auto 13px;display:grid;place-items:center;
+      background:#19ad62;color:#fff;font-weight:950;font-size:25px;box-shadow:0 8px 22px rgba(25,173,98,.2)
+    }
+    .ok-tag{font-size:9px;font-weight:900;letter-spacing:1.4px;color:#0758af}
+    h1{font-size:27px;line-height:1.15;letter-spacing:-.8px;margin:7px 0 8px}
+    .ok-lead{font-size:13px;line-height:1.58;color:#6b7280;max-width:450px;margin:0 auto}
+    .ok-ref{
+      margin:18px auto 15px;padding:12px 14px;background:#f7f9fb;border:1px solid #e5ebf0;
+      border-radius:10px;display:flex;align-items:center;justify-content:space-between;gap:12px;max-width:330px
+    }
+    .ok-ref span{font-size:10px;color:#7b8490;font-weight:750}.ok-ref b{font-size:14px;color:#0758af}
+    .ok-info{
+      margin:0;text-align:left;border:1px solid #edf1f4;border-radius:12px;overflow:hidden
+    }
+    .ok-info div{display:flex;gap:11px;align-items:center;padding:11px 12px;border-bottom:1px solid #edf1f4}
+    .ok-info div:last-child{border-bottom:0}
+    .ok-info i{
+      flex:0 0 27px;width:27px;height:27px;border-radius:8px;background:#eaf3ff;color:#0758af;
+      display:grid;place-items:center;font-style:normal;font-size:10px;font-weight:900
+    }
+    .ok-info strong{display:block;font-size:11px;margin-bottom:2px}.ok-info small{display:block;color:#7c8591;font-size:9px;line-height:1.35}
+    .ok-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:16px}
+    .ok-actions a{min-height:44px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:900}
+    .ok-wa{background:#20b564;color:#fff}.ok-home{border:1px solid #dfe5ea;color:#27313b;background:#fff}
+    .ok-phone{margin-top:15px;padding-top:14px;border-top:1px solid #edf1f4;font-size:10px;color:#7c8591}
+    .ok-phone a{color:#0758af;font-weight:900;font-size:12px;margin-left:5px}
+
+    @media(max-width:600px){
+      body{background:#f6f8fb}
+      .ok-wrap{min-height:100dvh;padding:10px;align-items:center}
+      .ok-card{
+        width:100%;max-width:430px;border-radius:16px;padding:18px 15px 16px;
+        box-shadow:0 10px 32px rgba(20,45,70,.08)
+      }
+      .ok-logo{width:64px;height:64px;margin-bottom:4px}
+      .ok-check{width:46px;height:46px;font-size:21px;margin-bottom:10px}
+      .ok-tag{font-size:8px}
+      h1{font-size:22px;letter-spacing:-.5px;margin:6px 0 7px}
+      .ok-lead{font-size:11.5px;line-height:1.5;padding:0 3px}
+      .ok-ref{margin:14px auto 12px;padding:10px 11px}
+      .ok-info div{padding:9px 10px}
+      .ok-info i{width:25px;height:25px;flex-basis:25px}
+      .ok-actions{grid-template-columns:1fr;margin-top:13px}
+      .ok-actions a{min-height:42px}
+      .ok-phone{margin-top:12px;padding-top:12px}
+    }
+  </style>
+</head>
+<body>
+<main class="ok-wrap">
+  <section class="ok-card">
+    <img class="ok-logo" src="{{ url_for('static', filename='favicon-192.png') }}?v=22" alt="Aras Asansör">
+    <div class="ok-check">✓</div>
+    <div class="ok-tag">TALEBİNİZ ALINDI</div>
+    <h1>Teşekkürler, talebiniz bize ulaştı.</h1>
+    <p class="ok-lead">Gönderdiğiniz taşıma bilgilerini ve fotoğrafları inceleyip size tek ve net fiyat teklifimizi ileteceğiz.</p>
+
+    <div class="ok-ref"><span>Talep numarası</span><b>{{ ref }}</b></div>
+
+    <div class="ok-info">
+      <div><i>1</i><span><strong>Bilgilerinizi inceliyoruz</strong><small>Ev, kat ve eşya fotoğraflarınız kontrol edilir.</small></span></div>
+      <div><i>2</i><span><strong>Tek fiyat hazırlanır</strong><small>Taşımanız için net toplam fiyat belirlenir.</small></span></div>
+      <div><i>3</i><span><strong>Size ulaşıyoruz</strong><small>Telefon veya WhatsApp üzerinden teklifiniz iletilir.</small></span></div>
+    </div>
+
+    <div class="ok-actions">
+      {% if whatsapp %}
+      <a class="ok-wa" target="_blank" rel="noopener" href="https://wa.me/{{ whatsapp }}?text=Merhaba%20Aras%20Asans%C3%B6r%2C%20{{ ref }}%20numaral%C4%B1%20talebim%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum.">WhatsApp'tan Yaz</a>
+      {% endif %}
+      <a class="ok-home" href="/">Ana Sayfaya Dön</a>
+    </div>
+
+    <div class="ok-phone">Hızlı iletişim <a href="tel:+905541698440">0554 169 84 40</a></div>
+  </section>
+</main>
+</body>
+</html>
