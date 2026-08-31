@@ -14,7 +14,7 @@
     "@type":"MovingCompany",
     "name":"Aras Asansör",
     "description":"Antalya asansörlü evden eve taşımacılık ve nakliyat hizmeti.",
-    "telephone":"+90 554 169 84 40",
+    "telephone":"+90 541 870 50 01",
     "areaServed":[
       {"@type":"City","name":"Antalya"},
       {"@type":"AdministrativeArea","name":"Muratpaşa"},
@@ -44,7 +44,7 @@
 </section>
 
 </main>
-<footer><img src="{{url_for('static',filename='aras-logo.jpg')}}"><p>ARAS ASANSÖR<br><small>Evden Eve Taşımacılık • Antalya</small></p><div><a href="tel:+905541698440">{{phone}}</a><a href="https://wa.me/{{whatsapp}}" target="_blank">WhatsApp</a></div></footer>
-<div class="mobile-bar"><a href="tel:+905541698440">☎<span>Ara</span></a><a href="https://wa.me/{{whatsapp}}" target="_blank">◉<span>WhatsApp</span></a><a class="hot" href="#fiyat-al">Teklif Al</a></div>
+<footer><img src="{{url_for('static',filename='aras-logo.jpg')}}"><p>ARAS ASANSÖR<br><small>Evden Eve Taşımacılık • Antalya</small></p><div><a href="tel:+905418705001">{{phone}}</a><a href="https://wa.me/{{whatsapp}}" target="_blank">WhatsApp</a></div></footer>
+<div class="mobile-bar"><a href="tel:+905418705001">☎<span>Ara</span></a><a href="https://wa.me/{{whatsapp}}" target="_blank">◉<span>WhatsApp</span></a><a class="hot" href="#fiyat-al">Teklif Al</a></div>
 <div class="modal" id="reviewModal"><form action="/yorum" method="post" class="review-form"><button type="button" class="modal-x" id="reviewClose">×</button><span class="section-tag">DENEYİMİNİZİ PAYLAŞIN</span><h2>Yorum Yap</h2><label>Ad Soyad<input name="name" required></label><label>Puan<select name="rating"><option value="5">5 - Çok iyi</option><option value="4">4 - İyi</option><option value="3">3 - Orta</option><option value="2">2</option><option value="1">1</option></select></label><label>Yorumunuz<textarea name="comment" required minlength="8"></textarea></label><button class="orange btn">Yorumu Gönder</button><small>Yorumunuz onaylandıktan sonra yayınlanır.</small></form></div>
 <script src="{{url_for('static',filename='app.js')}}?v=2.0"></script></body></html>
