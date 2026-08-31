@@ -19,8 +19,8 @@ app.secret_key = os.getenv('ARAS_SECRET_KEY', 'change-this-secret-in-production'
 app.config['MAX_CONTENT_LENGTH'] = MAX_UPLOAD_MB * 1024 * 1024
 ADMIN_USER = os.getenv('ARAS_ADMIN_USERNAME', 'admin')
 ADMIN_PASSWORD = os.getenv('ARAS_ADMIN_PASSWORD', '123456')
-PHONE_NUMBER = os.getenv('ARAS_PHONE_NUMBER', '0554 169 84 40')
-WHATSAPP_NUMBER = os.getenv('ARAS_WHATSAPP_NUMBER', '905541698440')
+PHONE_NUMBER = os.getenv('ARAS_PHONE_NUMBER', '0541 870 50 01')
+WHATSAPP_NUMBER = os.getenv('ARAS_WHATSAPP_NUMBER', '905418705001')
 
 def db():
     con=sqlite3.connect(DB_PATH); con.row_factory=sqlite3.Row; con.execute('PRAGMA foreign_keys=ON'); return con
